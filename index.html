@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Routine | Cyber & Eng</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #1a1d24;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #00ffcc;
+            --border-color: #2d3748;
+            
+            /* Tag Colors */
+            --tag-prayer: #3b82f6;
+            --tag-cyber: #10b981;
+            --tag-work: #8b5cf6;
+            --tag-life: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        h1 span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            border-top: 3px solid var(--accent);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+            font-weight: 400;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card h2 .badge {
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: var(--text-muted);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: flex;
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .time {
+            font-weight: 600;
+            color: var(--accent);
+            min-width: 130px;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .task-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .task-title {
+            font-size: 1rem;
+            color: #ffffff;
+        }
+
+        .task-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .tags {
+            margin-top: 6px;
+            display: flex;
+            gap: 6px;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Dynamic Tag Coloring */
+        .t-prayer { background: rgba(59, 130, 246, 0.2); color: var(--tag-prayer); }
+        .t-cyber { background: rgba(16, 185, 129, 0.2); color: var(--tag-cyber); }
+        .t-work { background: rgba(139, 92, 246, 0.2); color: var(--tag-work); }
+        .t-life { background: rgba(245, 158, 11, 0.2); color: var(--tag-life); }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            li { flex-direction: column; }
+            .time { margin-bottom: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Mission <span>Control</span></h1>
+            
+            <p style="color: var(--text-muted);">Daily Operations & Skill Development</p>
+        </header>
+
+        <div class="grid">
+            <!-- Campus Days Card -->
+            <div class="card">
+                <h2>Campus Days <span class="badge">Mon - Wed</span></h2>
+                <ul>
+                    <li>
+                        <div class="time">3:45 AM - 4:15 AM</div>
+                        <div class="task-details">
+                            <span class="task-title">Wake Up & Fajr</span>
+                            <div class="tags"><span class="tag t-prayer">Spiritual</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">4:15 AM - 5:30 AM</div>
+                        <div class="task-details">
+                            <span class="task-title">Fitness</span>
+                            <span class="task-desc">Morning walk or light workout.</span>
+                            <div class="tags"><span class="tag t-life">Health</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">5:30 AM - 7:30 AM</div>
+                        <div class="task-details">
+                            <span class="task-title">Threat Intel & HTB</span>
+                            <span class="task-desc">Read CVEs, fire up Kali, exploit machines.</span>
+                            <div class="tags"><span class="tag t-cyber">Cybersecurity</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">7:30 AM - 8:45 AM</div>
+                        <div class="task-details">
+                            <span class="task-title">Breakfast & Commute</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">8:45 AM - 2:00 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">University Classes</span>
+                            <span class="task-desc">Pray Dhuhr (~12:00 PM) on campus.</span>
+                            <div class="tags"><span class="tag t-work">Academic</span> <span class="tag t-prayer">Spiritual</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">2:00 PM - 4:30 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Commute & Lunch + Break</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">4:30 PM - 5:00 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Asr Prayer</span>
+                            <div class="tags"><span class="tag t-prayer">Spiritual</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">4:00 PM - 6:45 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Python learn & writeups</span>
+                            <span class="task-desc">Study Python concepts and complete writeups if any H/W.</span>
+                            <div class="tags"><span class="tag t-work">Engineering</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">6:45 PM - 7:15 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Maghrib Prayer & Dinner</span>
+                            <div class="tags"><span class="tag t-prayer">Spiritual</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">7:15 PM - 8:15 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Hack The Box</span>
+                            <span class="task-desc">Full focused hack the box career path learning.</span>
+                            <div class="tags"><span class="tag t-work">Career</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">8:15 PM - 9:00 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Isha Prayer & Decompress</span>
+                            <span class="task-desc">Warzone, Forza 5, or Clash of Clans.</span>
+                            <div class="tags"><span class="tag t-prayer">Spiritual</span> <span class="tag t-life">Gaming</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">9:00 PM - 11 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Hack The Box</span>
+                            <div class="tags"><span class="tag t-life">Learning</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">11:00 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Sleep</span>
+                            <div class="tags"><span class="tag t-life">Rest</span></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Deep Work Days Card -->
+            <div class="card">
+                <h2>Deep Work <span class="badge">Thu - Sun</span></h2>
+                <ul>
+                    <li>
+                        <div class="time">3:45 AM - 6:00 AM</div>
+                        <div class="task-details">
+                            <span class="task-title">Fajr & Morning Walk</span>
+                            <div class="tags"><span class="tag t-prayer">Spiritual</span> <span class="tag t-life">Health</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">6:00 AM - 10:00 AM</div>
+                        <div class="task-details">
+                            <span class="task-title">Cybersecurity Mastery</span>
+                            <span class="task-desc">Unbroken block. Active HTB seasons, Nmap scripting, reverse-engineering.</span>
+                            <div class="tags"><span class="tag t-cyber">Cybersecurity</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">10:00 AM - 11:00 AM</div>
+                        <div class="task-details">
+                            <span class="task-title">Breakfast & Break</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">11:00 AM - 1:00 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Assignment and Task Completion</span>
+                            <span class="task-desc">Clear managerial queue. Pray Dhuhr.</span>
+                            <div class="tags"><span class="tag t-work">Engineering</span> <span class="tag t-prayer">Spiritual</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">1:00 PM - 2:00 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Lunch & Prayer</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">2:00 PM - 4:30 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Hack The Box</span>
+                            <div class="tags"><span class="tag t-work">HTB</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">4:30 PM - 5:30 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Asr Prayer</span>
+                            <div class="tags"><span class="tag t-prayer">Spiritual</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">5:30 PM - 6:45 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Running or Walking</span>
+                            <span class="task-desc">Go for a run or walk, stay hydrated.</span>
+                            <div class="tags"><span class="tag t-cyber">Health</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">6:45 PM - 7:15 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Maghrib Prayer</span>
+                            <div class="tags"><span class="tag t-prayer">Spiritual</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">7:15 PM - 8:15 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Free Time / Gaming</span>
+                            <div class="tags"><span class="tag t-life">Gaming</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">8:15 PM - 9:00 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Isha Prayer & Dinner</span>
+                            <div class="tags"><span class="tag t-prayer">Spiritual</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">9:00 PM - 11:00 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">HTB LAB solve or Piko ctf</span>
+                            <div class="tags"><span class="tag t-life">CTF</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="time">11:00 PM</div>
+                        <div class="task-details">
+                            <span class="task-title">Sleep</span>
+                            <div class="tags"><span class="tag t-life">Rest</span></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
